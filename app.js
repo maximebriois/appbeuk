@@ -15,7 +15,11 @@ function player(id){const ep=EPISODES.find(e=>e.id===id);if(!ep)return home();cu
   saveProgress(current);
   home();
 };document.querySelector('.prev').onclick=()=>prev&&player(prev.id);document.querySelector('.next').onclick=()=>next&&player(next.id);
- audio.src=ep.audio;const stored=progress()[ep.id];audio.onloadedmetadata=()=>{if(stored?.time&&stored.time<audio.duration-5)audio.currentTime=stored.time;update()};audio.ontimeupdate=update;audio.onplay=()=>document.querySelector('.play').textContent='Ⅱ';audio.onpause=()=>document.querySelector('.play').textContent='▶';audio.onended=()=>{saveProgress(ep);if(next)player(next.id)};
+ audio.src=ep.audio;const stored=progress()[ep.id];audio.onloadedmetadata=()=>{if(stored?.time&&stored.time<audio.duration-5)audio.currentTime=stored.time;update()};audio.ontimeupdate=update;audio.onplay=()=>document.querySelector('.play').textContent='Ⅱ';audio.onpause=()=>{
+  saveProgress(current);
+  const playButton=document.querySelector('.play');
+  if(playButton) playButton.textContent='▶';
+};audio.onended=()=>{saveProgress(ep);if(next)player(next.id)};
  document.querySelector('.play').onclick=()=>audio.paused?audio.play():audio.pause();document.querySelector('.rewind').onclick=()=>audio.currentTime=Math.max(0,audio.currentTime-10);document.querySelector('.forward').onclick=()=>audio.currentTime=Math.min(audio.duration||Infinity,audio.currentTime+30);document.querySelector('.progress').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/100};clearInterval(saveTimer);saveTimer=setInterval(()=>saveProgress(current),5000);
 }
 function update(){if(!current)return;const bar=document.querySelector('.progress');if(!bar)return;bar.value=audio.duration?audio.currentTime/audio.duration*100:0;document.querySelector('.elapsed').textContent=fmt(audio.currentTime);document.querySelector('.duration').textContent=fmt(audio.duration)}
