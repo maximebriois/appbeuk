@@ -1,5 +1,5 @@
 window.EPISODES = [
-  {id:'1',season:1,episode:'1',title:'Présentation',audio:'https://res.cloudinary.com/vb47d89i/video/upload/v1784417440/donjon-de-naheulbeuk01-censur%C3%A9_p1qvfe.mp3',image:'https://res.cloudinary.com/vb47d89i/image/upload/v1784424079/Episode_1_gcizga.png'},
+  {id:'1',season:1,episode:'1',title:'Présentation',audio:'https://res.cloudinary.com/vb47d89i/video/upload/v1784757179/donjon-de-naheulbeuk01-censur%C3%A92_tebs4n.mp3',image:'https://res.cloudinary.com/vb47d89i/image/upload/v1784424079/Episode_1_gcizga.png'},
   {id:'2',season:1,episode:'2',title:'Entrée, 1er niveau',audio:'https://res.cloudinary.com/vb47d89i/video/upload/v1784417440/donjon-de-naheulbeuk02-censur%C3%A9_j2xjsr.mp3',image:'https://res.cloudinary.com/vb47d89i/image/upload/v1784424079/Episode_2_ks8ll1.png'},
   {id:'3',season:1,episode:'3',title:"L'escalier",audio:'https://res.cloudinary.com/vb47d89i/video/upload/v1784417441/donjon-de-naheulbeuk03-censur%C3%A9_jayi5y.mp3',image:'https://res.cloudinary.com/vb47d89i/image/upload/v1784425307/Episode_3_h0rcw5.png'},
   {id:'4',season:1,episode:'4',title:'Les orques, le couloir',audio:'https://res.cloudinary.com/vb47d89i/video/upload/v1784417442/donjon-de-naheulbeuk04-censur%C3%A9_ogyq00.mp3',image:'https://res.cloudinary.com/vb47d89i/image/upload/v1784425308/Episode_4_xc8d3k.png'},
